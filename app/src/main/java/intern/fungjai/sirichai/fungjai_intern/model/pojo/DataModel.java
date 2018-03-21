@@ -1,4 +1,4 @@
-package intern.fungjai.sirichai.fungjai_intern.model;
+package intern.fungjai.sirichai.fungjai_intern.model.pojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

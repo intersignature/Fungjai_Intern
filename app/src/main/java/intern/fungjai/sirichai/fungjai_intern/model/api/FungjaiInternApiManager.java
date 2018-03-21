@@ -1,14 +1,14 @@
-package intern.fungjai.sirichai.fungjai_intern.api;
+package intern.fungjai.sirichai.fungjai_intern.model.api;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class FungjaiInternApi {
+public class FungjaiInternApiManager {
 
     public static Service service = null;
 
-    public static Service getService() {
+    public static Service getFungjaiInternApi() {
         if (service == null){
             OkHttpClient client = new OkHttpClient
                     .Builder()
