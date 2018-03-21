@@ -25,9 +25,4 @@ public class MainActivity extends AppCompatActivity {
         controller = new Controller(MainActivity.this, recyclerView);
         controller.getData();
     }
-
-
-
-
-    //TODO: Create ListView for view data
 }
