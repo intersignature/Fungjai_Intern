@@ -1,4 +1,3 @@
-
 package intern.fungjai.sirichai.fungjai_intern.model;
 
 import com.google.gson.annotations.Expose;
