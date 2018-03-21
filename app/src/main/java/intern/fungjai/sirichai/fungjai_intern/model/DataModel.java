@@ -28,6 +28,20 @@ public class DataModel {
     @Expose
     private String url;
 
+    public DataModel() {
+    }
+
+    public DataModel(String artist, String cover, String song, String type, String description, String title, String url) {
+        super();
+        this.artist = artist;
+        this.cover = cover;
+        this.song = song;
+        this.type = type;
+        this.description = description;
+        this.title = title;
+        this.url = url;
+    }
+
     public String getArtist() {
         return artist;
     }
@@ -84,4 +98,9 @@ public class DataModel {
         this.url = url;
     }
 
+    @Override
+    public String toString() {
+        return "artist:" + artist + " cover:" + cover + " song:" + song + " type:" + type
+                + " description:" + description + " title:" + title + " url:" + url;
+    }
 }
