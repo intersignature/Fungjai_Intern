@@ -15,14 +15,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        configRecyclerView();
+
+        controller = new Controller(MainActivity.this, recyclerView);
+        controller.getData();
+    }
+
+    private void configRecyclerView() {
 
         recyclerView = findViewById(R.id.showDataRV);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        controller = new Controller(MainActivity.this, recyclerView);
-        controller.getData();
     }
 }
