@@ -21,6 +21,7 @@ public class DataController {
     private List<DataModel> datas;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
+
     public DataController(Context context, RecyclerView recyclerView) {
         this.context = context;
         this.recyclerView = recyclerView;

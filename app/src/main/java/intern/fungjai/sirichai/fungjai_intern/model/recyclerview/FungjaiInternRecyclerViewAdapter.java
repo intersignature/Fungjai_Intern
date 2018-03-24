@@ -13,7 +13,7 @@ import java.util.List;
 import intern.fungjai.sirichai.fungjai_intern.R;
 import intern.fungjai.sirichai.fungjai_intern.model.pojo.DataModel;
 
-public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<FungjaiInternRecyclerViewHolder>{
+public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<FungjaiInternRecyclerViewHolder> {
 
     private List<DataModel> datas;
     private Context context;
@@ -25,19 +25,17 @@ public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<Fungj
 
     @Override
     public int getItemViewType(int position) {
-        if (datas.get(position).getType().equals("zine")){
+        if (datas.get(position).getType().equals("zine")) {
             return 0;
-        }
-        else return 1;
+        } else return 1;
     }
 
     @Override
     public FungjaiInternRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
-        if (viewType == 0){
+        if (viewType == 0) {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.zine_item, parent, false);
-        }
-        else {
+        } else {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.track_item, parent, false);
         }
         return new FungjaiInternRecyclerViewHolder(v);
@@ -47,7 +45,7 @@ public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<Fungj
     public void onBindViewHolder(FungjaiInternRecyclerViewHolder holder, int position) {
         DataModel dataModel = datas.get(position);
 
-        if (dataModel.getType().equals("zine")){
+        if (dataModel.getType().equals("zine")) {
             Picasso.with(context).load(dataModel.getCover()).placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)
                     .into(holder.coverImg);
@@ -66,5 +64,4 @@ public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<Fungj
     public int getItemCount() {
         return datas.size();
     }
-
 }

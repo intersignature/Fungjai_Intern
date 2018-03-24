@@ -10,7 +10,7 @@ public class FungjaiInternApiManager {
     public static Service service = null;
 
     public static Service getFungjaiInternApi() {
-        if (service == null){
+        if (service == null) {
             OkHttpClient client = new OkHttpClient
                     .Builder()
                     .build();
