@@ -1,6 +1,7 @@
 package intern.fungjai.sirichai.fungjai_intern.controller;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
@@ -14,13 +15,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Controller {
+public class DataController {
 
     private Context context;
     private List<DataModel> datas;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
-    public Controller(Context context, RecyclerView recyclerView) {
+    public DataController(Context context, RecyclerView recyclerView) {
         this.context = context;
         this.recyclerView = recyclerView;
     }
@@ -30,7 +31,7 @@ public class Controller {
         final Call<List<DataModel>> dataModel = FungjaiInternApiManager.getFungjaiInternApi().getMusicList();
         dataModel.enqueue(new Callback<List<DataModel>>() {
             @Override
-            public void onResponse(Call<List<DataModel>> call, Response<List<DataModel>> response) {
+            public void onResponse(@NonNull Call<List<DataModel>> call, @NonNull Response<List<DataModel>> response) {
                 datas = response.body();
                 adapter = new FungjaiInternRecyclerViewAdapter(datas, context);
                 recyclerView.setAdapter(adapter);
@@ -38,7 +39,7 @@ public class Controller {
             }
 
             @Override
-            public void onFailure(Call<List<DataModel>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<DataModel>> call, @NonNull Throwable t) {
                 Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
             }
         });

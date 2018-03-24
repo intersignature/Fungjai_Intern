@@ -24,7 +24,7 @@
                 android:id="@+id/titleTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="title"
+                android:text="@string/title"
                 android:textStyle="bold"
                 android:textSize="37.5sp"
                 android:textColor="@color/red"/>
@@ -32,7 +32,7 @@
                 android:id="@+id/descriptionTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Description"
+                android:text="@string/description"
                 android:textSize="30sp"
                 android:maxLines="3"
                 android:textColor="@color/black"/>

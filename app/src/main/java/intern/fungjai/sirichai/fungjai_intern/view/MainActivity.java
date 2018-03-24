@@ -6,11 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import intern.fungjai.sirichai.fungjai_intern.R;
-import intern.fungjai.sirichai.fungjai_intern.controller.Controller;
+import intern.fungjai.sirichai.fungjai_intern.controller.DataController;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Controller controller;
     private RecyclerView recyclerView;
 
     @Override
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         configRecyclerView();
 
-        controller = new Controller(MainActivity.this, recyclerView);
+        DataController controller = new DataController(MainActivity.this, recyclerView);
         controller.getData();
     }
 
