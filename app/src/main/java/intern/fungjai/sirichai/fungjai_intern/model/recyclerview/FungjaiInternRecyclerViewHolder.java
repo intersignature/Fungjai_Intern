@@ -19,9 +19,9 @@ public class FungjaiInternRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     protected FungjaiInternRecyclerViewHolder(View itemView) {
         super(itemView);
-        coverImg = itemView.findViewById(R.id.coverImg);
+        coverImg = itemView.findViewById(R.id.coverZineImg);
         titleTv = itemView.findViewById(R.id.titleTv);
-        descriptionTv = itemView.findViewById(R.id.descriptionTv);
+        descriptionTv = itemView.findViewById(R.id.descriptionZineTv);
 
         coverTrackImg = itemView.findViewById(R.id.coverTrackImg);
         songTrackTv = itemView.findViewById(R.id.songTrackTv);

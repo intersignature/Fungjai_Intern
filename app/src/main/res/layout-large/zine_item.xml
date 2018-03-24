@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,32 +9,34 @@
         android:layout_margin="@dimen/cardview_compat_inset_shadow">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <ImageView
-                android:paddingTop="7.5dp"
-                android:id="@+id/coverImg"
+                android:id="@+id/coverZineImg"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:paddingTop="7.5dp" />
+
             <TextView
                 android:id="@+id/titleTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
-                android:textStyle="bold"
+                android:textColor="@color/red"
                 android:textSize="37.5sp"
-                android:textColor="@color/red"/>
+                android:textStyle="bold" />
+
             <TextView
-                android:id="@+id/descriptionTv"
+                android:id="@+id/descriptionZineTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/description"
-                android:textSize="30sp"
                 android:maxLines="3"
-                android:textColor="@color/black"/>
+                android:text="@string/description"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
