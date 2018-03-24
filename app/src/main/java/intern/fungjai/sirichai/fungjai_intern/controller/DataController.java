@@ -15,10 +15,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DataController {
+public class DataController implements Callback<List<DataModel>> {
 
-    private Context context;
     private List<DataModel> datas;
+    private Context context;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
 
@@ -30,19 +30,19 @@ public class DataController {
     public void getData() {
         datas = new ArrayList<>();
         final Call<List<DataModel>> dataModel = FungjaiInternApiManager.getFungjaiInternApi().getMusicList();
-        dataModel.enqueue(new Callback<List<DataModel>>() {
-            @Override
-            public void onResponse(@NonNull Call<List<DataModel>> call, @NonNull Response<List<DataModel>> response) {
-                datas = response.body();
-                adapter = new FungjaiInternRecyclerViewAdapter(datas, context);
-                recyclerView.setAdapter(adapter);
-                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
-            }
+        dataModel.enqueue(this);
+    }
 
-            @Override
-            public void onFailure(@NonNull Call<List<DataModel>> call, @NonNull Throwable t) {
-                Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
-            }
-        });
+    @Override
+    public void onResponse(@NonNull Call<List<DataModel>> call, @NonNull Response<List<DataModel>> response) {
+        datas = response.body();
+        adapter = new FungjaiInternRecyclerViewAdapter(datas, context);
+        recyclerView.setAdapter(adapter);
+        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFailure(@NonNull Call<List<DataModel>> call, @NonNull Throwable t) {
+        Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
     }
 }
