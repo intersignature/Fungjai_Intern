@@ -6,25 +6,18 @@ import com.google.gson.annotations.SerializedName;
 public class DataModel {
 
     @SerializedName("artist")
-    @Expose
     private String artist;
     @SerializedName("cover")
-    @Expose
     private String cover;
     @SerializedName("song")
-    @Expose
     private String song;
     @SerializedName("type")
-    @Expose
     private String type;
     @SerializedName("description")
-    @Expose
     private String description;
     @SerializedName("title")
-    @Expose
     private String title;
     @SerializedName("url")
-    @Expose
     private String url;
 
     public DataModel() {
