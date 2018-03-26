@@ -44,7 +44,6 @@ public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<Fungj
     @Override
     public void onBindViewHolder(FungjaiInternRecyclerViewHolder holder, int position) {
         MusicData musicData = datas.get(position);
-
         if (musicData.getType().equals("zine")) {
             Picasso.with(context).load(musicData.getCover()).placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)

@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import intern.fungjai.sirichai.fungjai_intern.R;
 
-public class FungjaiInternRecyclerViewHolder extends RecyclerView.ViewHolder {
+class FungjaiInternRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     protected ImageView coverImg;
     protected TextView titleTv;
