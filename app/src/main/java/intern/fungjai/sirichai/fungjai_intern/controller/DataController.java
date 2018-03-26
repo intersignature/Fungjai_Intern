@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import intern.fungjai.sirichai.fungjai_intern.model.api.FungjaiInternApiManager;
-import intern.fungjai.sirichai.fungjai_intern.model.pojo.DataModel;
+import intern.fungjai.sirichai.fungjai_intern.model.pojo.MusicData;
 import intern.fungjai.sirichai.fungjai_intern.model.recyclerview.FungjaiInternRecyclerViewAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DataController implements Callback<List<DataModel>> {
+public class DataController implements Callback<List<MusicData>> {
 
-    private List<DataModel> datas;
+    private List<MusicData> datas;
     private Context context;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerView;
@@ -29,12 +29,12 @@ public class DataController implements Callback<List<DataModel>> {
 
     public void getData() {
         datas = new ArrayList<>();
-        final Call<List<DataModel>> dataModel = FungjaiInternApiManager.getFungjaiInternApi().getMusicList();
+        final Call<List<MusicData>> dataModel = FungjaiInternApiManager.getFungjaiInternApi().getMusicList();
         dataModel.enqueue(this);
     }
 
     @Override
-    public void onResponse(@NonNull Call<List<DataModel>> call, @NonNull Response<List<DataModel>> response) {
+    public void onResponse(@NonNull Call<List<MusicData>> call, @NonNull Response<List<MusicData>> response) {
         datas = response.body();
         adapter = new FungjaiInternRecyclerViewAdapter(datas, context);
         recyclerView.setAdapter(adapter);
@@ -42,7 +42,7 @@ public class DataController implements Callback<List<DataModel>> {
     }
 
     @Override
-    public void onFailure(@NonNull Call<List<DataModel>> call, @NonNull Throwable t) {
+    public void onFailure(@NonNull Call<List<MusicData>> call, @NonNull Throwable t) {
         Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
     }
 }

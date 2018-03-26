@@ -15,8 +15,8 @@ public class ServiceTest {
     @Test
     public void resultSizeTest() throws IOException {
         Service service = FungjaiInternApiManager.getFungjaiInternApi();
-        List<DataModel> dataModelList = service.getMusicList().execute().body();
-        assert dataModelList != null;
-        assertEquals(8, dataModelList.size());
+        List<MusicData> musicListData = service.getMusicList().execute().body();
+        assert musicListData != null;
+        assertEquals(8, musicListData.size());
     }
 }

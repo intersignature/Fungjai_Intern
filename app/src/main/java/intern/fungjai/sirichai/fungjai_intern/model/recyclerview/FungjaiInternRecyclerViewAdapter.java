@@ -11,14 +11,14 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import intern.fungjai.sirichai.fungjai_intern.R;
-import intern.fungjai.sirichai.fungjai_intern.model.pojo.DataModel;
+import intern.fungjai.sirichai.fungjai_intern.model.pojo.MusicData;
 
 public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<FungjaiInternRecyclerViewHolder> {
 
-    private List<DataModel> datas;
+    private List<MusicData> datas;
     private Context context;
 
-    public FungjaiInternRecyclerViewAdapter(List<DataModel> datas, Context context) {
+    public FungjaiInternRecyclerViewAdapter(List<MusicData> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -43,20 +43,20 @@ public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<Fungj
 
     @Override
     public void onBindViewHolder(FungjaiInternRecyclerViewHolder holder, int position) {
-        DataModel dataModel = datas.get(position);
+        MusicData musicData = datas.get(position);
 
-        if (dataModel.getType().equals("zine")) {
-            Picasso.with(context).load(dataModel.getCover()).placeholder(R.mipmap.ic_launcher)
+        if (musicData.getType().equals("zine")) {
+            Picasso.with(context).load(musicData.getCover()).placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)
                     .into(holder.coverImg);
-            holder.titleTv.setText(dataModel.getTitle());
-            holder.descriptionTv.setText(dataModel.getDescription());
+            holder.titleTv.setText(musicData.getTitle());
+            holder.descriptionTv.setText(musicData.getDescription());
         } else {
-            Picasso.with(context).load(dataModel.getCover()).placeholder(R.mipmap.ic_launcher)
+            Picasso.with(context).load(musicData.getCover()).placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)
                     .into(holder.coverTrackImg);
-            holder.songTrackTv.setText(dataModel.getSong());
-            holder.artistTrackTv.setText(dataModel.getArtist());
+            holder.songTrackTv.setText(musicData.getSong());
+            holder.artistTrackTv.setText(musicData.getArtist());
         }
     }
 

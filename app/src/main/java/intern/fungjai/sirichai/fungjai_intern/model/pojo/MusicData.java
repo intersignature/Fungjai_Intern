@@ -3,7 +3,7 @@ package intern.fungjai.sirichai.fungjai_intern.model.pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DataModel {
+public class MusicData {
 
     @SerializedName("artist")
     private String artist;
@@ -20,10 +20,10 @@ public class DataModel {
     @SerializedName("url")
     private String url;
 
-    public DataModel() {
+    public MusicData() {
     }
 
-    public DataModel(String artist, String cover, String song, String type, String description, String title, String url) {
+    public MusicData(String artist, String cover, String song, String type, String description, String title, String url) {
         super();
         this.artist = artist;
         this.cover = cover;
