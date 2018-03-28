@@ -10,7 +10,7 @@ Show data from json in listviews vertical and in each listview has two types. If
 # External Library
 - Cardview
 - Recyclerview
-- Picasso
+- Glide
 
 # Example code service
 ```
