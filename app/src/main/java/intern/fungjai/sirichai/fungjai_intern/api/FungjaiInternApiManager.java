@@ -1,6 +1,6 @@
-package intern.fungjai.sirichai.fungjai_intern.model.api;
+package intern.fungjai.sirichai.fungjai_intern.api;
 
-import intern.fungjai.sirichai.fungjai_intern.model.utilities.Constants;
+import intern.fungjai.sirichai.fungjai_intern.utilities.Constants;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

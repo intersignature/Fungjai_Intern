@@ -1,4 +1,4 @@
-package intern.fungjai.sirichai.fungjai_intern.model.recyclerview;
+package intern.fungjai.sirichai.fungjai_intern.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -9,9 +9,9 @@ import intern.fungjai.sirichai.fungjai_intern.R;
 
 class FungjaiInternRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-    protected ImageView coverImg;
-    protected TextView titleTv;
-    protected TextView descriptionTv;
+    protected ImageView coverZineImg;
+    protected TextView titleZineTv;
+    protected TextView descriptionZineTv;
 
     protected ImageView coverTrackImg;
     protected TextView songTrackTv;
@@ -19,9 +19,9 @@ class FungjaiInternRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     protected FungjaiInternRecyclerViewHolder(View itemView) {
         super(itemView);
-        coverImg = itemView.findViewById(R.id.coverZineImg);
-        titleTv = itemView.findViewById(R.id.titleTv);
-        descriptionTv = itemView.findViewById(R.id.descriptionZineTv);
+        coverZineImg = itemView.findViewById(R.id.coverZineImg);
+        titleZineTv = itemView.findViewById(R.id.titleZineTv);
+        descriptionZineTv = itemView.findViewById(R.id.descriptionZineTv);
 
         coverTrackImg = itemView.findViewById(R.id.coverTrackImg);
         songTrackTv = itemView.findViewById(R.id.songTrackTv);

@@ -1,4 +1,4 @@
-package intern.fungjai.sirichai.fungjai_intern.view;
+package intern.fungjai.sirichai.fungjai_intern.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

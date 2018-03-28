@@ -1,4 +1,4 @@
-package intern.fungjai.sirichai.fungjai_intern.model.pojo;
+package intern.fungjai.sirichai.fungjai_intern.pojo;
 
 import org.junit.Before;
 import org.junit.Test;

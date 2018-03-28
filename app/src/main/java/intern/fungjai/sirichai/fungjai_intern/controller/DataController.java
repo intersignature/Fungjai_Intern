@@ -8,9 +8,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import intern.fungjai.sirichai.fungjai_intern.model.api.FungjaiInternApiManager;
-import intern.fungjai.sirichai.fungjai_intern.model.pojo.MusicData;
-import intern.fungjai.sirichai.fungjai_intern.model.recyclerview.FungjaiInternRecyclerViewAdapter;
+import intern.fungjai.sirichai.fungjai_intern.api.FungjaiInternApiManager;
+import intern.fungjai.sirichai.fungjai_intern.pojo.MusicData;
+import intern.fungjai.sirichai.fungjai_intern.recyclerview.FungjaiInternRecyclerViewAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -1,4 +1,4 @@
-package intern.fungjai.sirichai.fungjai_intern.model.utilities;
+package intern.fungjai.sirichai.fungjai_intern.utilities;
 
 public class Constants {
 

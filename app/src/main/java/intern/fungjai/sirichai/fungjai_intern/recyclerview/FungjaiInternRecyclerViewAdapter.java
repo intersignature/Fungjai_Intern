@@ -1,4 +1,4 @@
-package intern.fungjai.sirichai.fungjai_intern.model.recyclerview;
+package intern.fungjai.sirichai.fungjai_intern.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,12 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
 import intern.fungjai.sirichai.fungjai_intern.R;
-import intern.fungjai.sirichai.fungjai_intern.model.pojo.MusicData;
+import intern.fungjai.sirichai.fungjai_intern.pojo.MusicData;
 
 public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<FungjaiInternRecyclerViewHolder> {
 
@@ -45,15 +46,11 @@ public class FungjaiInternRecyclerViewAdapter extends RecyclerView.Adapter<Fungj
     public void onBindViewHolder(FungjaiInternRecyclerViewHolder holder, int position) {
         MusicData musicData = datas.get(position);
         if (musicData.getType().equals("zine")) {
-            Picasso.with(context).load(musicData.getCover()).placeholder(R.mipmap.ic_launcher)
-                    .error(R.mipmap.ic_launcher)
-                    .into(holder.coverImg);
-            holder.titleTv.setText(musicData.getTitle());
-            holder.descriptionTv.setText(musicData.getDescription());
+            Glide.with(context).asBitmap().load(musicData.getCover()).apply(RequestOptions.errorOf(R.drawable.ic_launcher_background)).into(holder.coverZineImg);
+            holder.titleZineTv.setText(musicData.getTitle());
+            holder.descriptionZineTv.setText(musicData.getDescription());
         } else {
-            Picasso.with(context).load(musicData.getCover()).placeholder(R.mipmap.ic_launcher)
-                    .error(R.mipmap.ic_launcher)
-                    .into(holder.coverTrackImg);
+            Glide.with(context).asBitmap().load(musicData.getCover()).apply(RequestOptions.errorOf(R.drawable.ic_launcher_background)).into(holder.coverTrackImg);
             holder.songTrackTv.setText(musicData.getSong());
             holder.artistTrackTv.setText(musicData.getArtist());
         }
